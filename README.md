@@ -1,6 +1,6 @@
 # Copyright 2019 Vinh Nguyen.
 # IEDigital Interview
-# Online testing: http://cpp.sh/3rlw4
+# Online testing: http://cpp.sh/43mdh
 Enter a command to init and run Pacman game: 
 
 **Hello**

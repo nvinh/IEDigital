@@ -8,18 +8,16 @@
 #include "pch.h"
 #include "IEDigital.h"
 bool Pacman::checkInitValue(int x, int y, int dir) {
-	m_x = x;
-	m_y = y;
-	m_dir = dir;
-	//std::cout << "m_x=" << m_x << ", m_y=" << m_y << ", m_dir=" << m_dir << "\n";
-	//std::cout << "c_maxX=" << c_maxX << ", c_maxY=" << c_maxY << ", MAX_DIR=" << MAX_DIR << "\n";
-	if ((m_x < 0) || (m_x > c_maxX) ||
-		(m_y < 0) || (m_y > c_maxY) ||
-		(m_dir < 0) || (m_dir >= MAX_DIR)) {
+	if ((x < 0) || (x > c_maxX) ||
+		(y < 0) || (y > c_maxY) ||
+		(dir < 0) || (dir >= MAX_DIR)) {
 		//std::cout << "Error\n";
 		return false;
 	}
 	else {
+		m_x = x;
+		m_y = y;
+		m_dir = dir;
 		m_start = true;
 		return true;
 	}
@@ -146,6 +144,7 @@ void PacmanGame() {
 				c_minX << "," << c_minY << "]and[" << c_maxX << "," << c_maxY << "], West, North, South, or East\n";			
 		}
 		if (start) {
+			if (cmd.substr(0, 5) == "PLACE") pacman.init(cmd);
 			if (cmd == "MOVE") pacman.move();
 			if (cmd == "REPORT") pacman.report();
 			if (cmd == "LEFT") pacman.turn(0);

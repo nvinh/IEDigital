@@ -1,5 +1,6 @@
 # Copyright 2019 Vinh Nguyen.
 # IEDigital Interview
+# Online testing: http://cpp.sh/3sn24
 Enter a command to init and run Pacman game: 
 Hello
 Pacman is not placed. Please place it first using command Place at somewhere within [0,0]and[4,4], West, North, South, or East 

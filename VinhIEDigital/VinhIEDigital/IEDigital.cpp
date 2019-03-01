@@ -4,6 +4,7 @@
 #include <cmath>
 #include <algorithm>
 #include <sstream>
+#include <exception>
 
 #include "pch.h"
 #include "IEDigital.h"
@@ -35,8 +36,22 @@ bool Pacman::init(std::string cmd) {
 				//std::cout << Pos[k] << "-";
 			//}
 			if (Pos.size() >= 3) {
-				int x = std::stoi(Pos[0]);
-				int y = std::stoi(Pos[1]);
+				int x;
+				int y;
+				try {
+					x = std::stoi(Pos[0]);
+				}
+				catch (std::exception& e) {
+					//std::cout << e.what() << "\n";
+					return false;
+				}
+				try {
+					y = std::stoi(Pos[1]);
+				}
+				catch (std::exception& e) {
+					//std::cout << e.what() << "\n";
+					return false;
+				}
 				int dLen = static_cast<int>(DirSt.size());
 				int i(0);
 				bool found = false;

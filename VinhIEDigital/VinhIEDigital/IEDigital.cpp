@@ -23,6 +23,9 @@ bool Pacman::checkInitValue(int x, int y, int dir) {
 		return true;
 	}
 }
+bool Pacman::ready() {
+	return m_start;
+}
 bool Pacman::init(std::string cmd) {
 	std::vector<std::string> inputCmd;
 	upperSt(cmd);

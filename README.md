@@ -1,6 +1,9 @@
 # Copyright 2019 Vinh Nguyen.
 # IEDigital Interview
 # Online testing: http://cpp.sh/43mdh (this website & its engine sometimes take too long to respond)
+/*
+Last version: cpp.sh/2tplr (not fully tested yet)
+*/
 Enter a command to init and run Pacman game: 
 
 **Hello**

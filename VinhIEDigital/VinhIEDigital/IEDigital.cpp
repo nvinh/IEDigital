@@ -143,7 +143,7 @@ void upperSt(std::string &data) {
 	});
 }
 
-void PacmanGame() {
+void pacmanGame() {
 	bool start(false);
 	bool stop(false);
 	Pacman pacman;
@@ -153,17 +153,16 @@ void PacmanGame() {
 		std::getline(std::cin, cmd);
 		//std::cout << "cmd= " << cmd << "\n";
 		upperSt(cmd);
-		if (!start) {
+		if (!pacman.ready()) {
 			start = pacman.init(cmd);
 			if (!start) std::cout << "Pacman is not placed. Please place it first using command Place at somewhere within [" <<
 				c_minX << "," << c_minY << "]and[" << c_maxX << "," << c_maxY << "], West, North, South, or East\n";			
-		}
-		if (start) {
+		} else {
 			if (cmd.substr(0, 5) == "PLACE") pacman.init(cmd);
 			if (cmd == "MOVE") pacman.move();
 			if (cmd == "REPORT") pacman.report();
-			if (cmd == "LEFT") pacman.turn(0);
-			if (cmd == "RIGHT") pacman.turn(1);
+			if (cmd == "LEFT") pacman.turn(LEFT);
+			if (cmd == "RIGHT") pacman.turn(RIGHT);
 			if (cmd == "QUIT") stop = true;
 			std::cout << "Pacman is here. Now you can MOVE, LEFT, RIGHT, REPORT, or QUIT:\n";
 		}

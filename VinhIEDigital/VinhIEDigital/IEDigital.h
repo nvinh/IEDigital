@@ -33,16 +33,15 @@ private:
 	int m_x{ 0 };
 	int m_y{ 0 };
 	int m_dir{ NORTH };
-	bool m_start{ false };
+	bool start{ false };
 public:
-	bool init(std::string cmd); // int x, int y, int dir;
+	bool init(int x, int y, int dir);
+	bool ready();
 	void move();
 	void turn(int cmd);
 	void report();
-private:
-	bool checkInitValue(int x, int y, int dir);
-	size_t splitSt(const std::string &txt, std::vector<std::string> &strs, char ch);
 };
 void upperSt(std::string &data);
-void PacmanGame();
+size_t splitSt(const std::string &txt, std::vector<std::string> &strs, char ch);
+void pacmanGame();
 #endif // !IEDIGITAL

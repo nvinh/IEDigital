@@ -33,15 +33,16 @@ private:
 	int m_x{ 0 };
 	int m_y{ 0 };
 	int m_dir{ NORTH };
-	bool start{ false };
+	bool m_start{ false };
+	size_t splitSt(const std::string &txt, std::vector<std::string> &strs, char ch);
 public:
-	bool init(int x, int y, int dir);
+	bool checkInitValue(int x, int y, int dir);
+	bool init(std::string cmd);
 	bool ready();
 	void move();
 	void turn(int cmd);
 	void report();
 };
 void upperSt(std::string &data);
-size_t splitSt(const std::string &txt, std::vector<std::string> &strs, char ch);
 void pacmanGame();
 #endif // !IEDIGITAL
